@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMM Paneli - Giriş Yönlendirme</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SMM Paneli - Giriş Yönlendirme</h1>
+    <p>Lütfen devam etmek için giriş yapın veya kaydolun.</p>
+  </header>
+
+  <main>
+    <section id="loginSection">
+      <h2>Giriş Yap</h2>
+      <form id="loginForm">
+        <label for="username">Kullanıcı Adı:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Şifre:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Giriş Yap</button>
+      </form>
+      <p id="signupLink">Hesabınız yok mu? <a href="#" onclick="openSignupModal()">Kaydol</a></p>
+    </section>
+
+    <!-- Üyelik formunu burada göstermek için modal -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeSignupModal()">&times;</span>
+        <h2>Üye Ol</h2>
+        <form id="signupForm" onsubmit="return registerUser()">
+          <div class="input-group">
+            <input type="text" id="newFullname" name="newFullname" placeholder="Ad Soyad" required>
+          </div>
+          <div class="input-group">
+            <input type="text" id="newUsername" name="newUsername" placeholder="Kullanıcı Adı" required>
+          </div>
+          <div class="input-group">
+            <input type="email" id="newEmail" name="newEmail" placeholder="E-posta" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="newPassword" name="newPassword" placeholder="Şifre" required>
+          </div>
+          <button type="submit">Kaydol</button>
+        </form>
+        <p class="switch-text">Zaten hesabınız var mı? <a href="#" onclick="openLoginModal()">Giriş Yap</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 SMM Paneli. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
